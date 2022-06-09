@@ -15,8 +15,8 @@ const main = () => {
   prepareDOMElements();
   prepareDomEvents();
 };
+//pobieramy do tej funckji wszystkie elementy
 const prepareDOMElements = () => {
-  //pobieramy do tej funckji wszystkie elementy
   todoInput = document.querySelector(".todo-input");
   errorInfo = document.querySelector(".error-info");
   addBtn = document.querySelector(".btn-add");
@@ -28,8 +28,8 @@ const prepareDOMElements = () => {
   popupAddBtn = document.querySelector(".accept");
   popupCloseBtn = document.querySelector(".cancel");
 };
+// tutaj znajdują się wszystkie nasłuchiwania
 const prepareDomEvents = () => {
-  // tutaj umiesciłem wszystkie nasłuchiwania
   addBtn.addEventListener("click", addNewTodo);
   //nasłuchujemy na kliknięcia w ulList
   ulList.addEventListener("click", checkClick);
@@ -137,6 +137,7 @@ const enterKeyCheck = (e) => {
 const tenIsEnough = () => {
   allToDos.length;
 };
-document.addEventListener("DOMContentLoaded", main);
+
 // nasze skrypty uruchomią się gdy cała strona zopstanie wczytana.
 //main pobierze wszystkie elementy i nada nasłuchiwanie na każdy pobrany element.
+document.addEventListener("DOMContentLoaded", main);
