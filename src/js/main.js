@@ -15,20 +15,19 @@ const main = () => {
   prepareDOMElements();
   prepareDomEvents();
 };
-//pobieramy do tej funckji wszystkie elementy
+
 const prepareDOMElements = () => {
   todoInput = document.querySelector(".todo-input");
   errorInfo = document.querySelector(".error-info");
   addBtn = document.querySelector(".btn-add");
   ulList = document.querySelector(".todolist ul");
-  //popup
   popup = document.querySelector(".popup");
   popupInfo = document.querySelector(".popup-info");
   popupInput = document.querySelector(".popup-input");
   popupAddBtn = document.querySelector(".accept");
   popupCloseBtn = document.querySelector(".cancel");
 };
-// tutaj znajdują się wszystkie nasłuchiwania
+
 const prepareDomEvents = () => {
   addBtn.addEventListener("click", addNewTodo);
   ulList.addEventListener("click", checkClick);
@@ -37,18 +36,10 @@ const prepareDomEvents = () => {
   todoInput.addEventListener("keyup", enterKeyCheck);
 };
 
-//tworzymy nowy element
-//dodajemy nowy element do list
-//odpalamy funckje na przycisk add
-//pobiera dane tekstowe z inputa i dodać do  swojego LI
-// dodatkowo zabezpieczenie w przypadku pustego inputa.
-
 const addNewTodo = () => {
   if (todoInput.value !== "") {
     newTodo = document.createElement("li");
     newTodo.textContent = todoInput.value;
-    // na mobilach gdy wiadomosc była za długa uciekała poza LI, ten kod sprawia, ze text się załamuje do nowej linii.
-
     ulList.appendChild(newTodo);
     todoInput.value = "";
     errorInfo.textContent = "";
@@ -89,10 +80,10 @@ const checkClick = (e) => {
   }
 };
 
+//funckjja sprawia, ze w edycji widzimy juz wczesniej wpisane zadanie
+//inaczej edit były pusty.
 const editToDo = (e) => {
   todoToEdit = e.target.closest("li");
-  //ta linijka sprawia, ze w edycji widzimy juz wczesniej wpisane zadanie
-  //inaczej edit były pusty. Dobre do poprawiania np. literówek.
   popupInput.value = todoToEdit.firstChild.textContent;
   popup.style.display = "flex";
 };
@@ -104,7 +95,6 @@ const closePopup = () => {
 
 const changeToDoText = () => {
   if (popupInput.value !== "") {
-    //zastepujemy obecny text juz nowym.
     todoToEdit.firstChild.textContent = popupInput.value;
     popupInfo.textContent = "";
     closePopup();
