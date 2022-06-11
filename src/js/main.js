@@ -31,7 +31,6 @@ const prepareDOMElements = () => {
 // tutaj znajdują się wszystkie nasłuchiwania
 const prepareDomEvents = () => {
   addBtn.addEventListener("click", addNewTodo);
-  //nasłuchujemy na kliknięcia w ulList
   ulList.addEventListener("click", checkClick);
   popupCloseBtn.addEventListener("click", closePopup);
   popupAddBtn.addEventListener("click", changeToDoText);
@@ -49,7 +48,6 @@ const addNewTodo = () => {
     newTodo = document.createElement("li");
     newTodo.textContent = todoInput.value;
     // na mobilach gdy wiadomosc była za długa uciekała poza LI, ten kod sprawia, ze text się załamuje do nowej linii.
-  
 
     ulList.appendChild(newTodo);
     todoInput.value = "";
@@ -62,31 +60,25 @@ const addNewTodo = () => {
 };
 
 const createToolsArea = () => {
-  //tworzymy nowy div z klasa tools
   const newDiv = document.createElement("div");
   newDiv.classList.add("tools");
-  //tworzymy trzy guziki
   const newBtnCom = document.createElement("button");
   const newBtnEdit = document.createElement("button");
   const newBtnDel = document.createElement("button");
-  //najadejym guzikom klase
   newBtnCom.classList.add("complete");
   newBtnEdit.classList.add("edit");
   newBtnDel.classList.add("delete");
-  // nadajemy tresc guzikom w tym przypadku ikonki i text
   newBtnCom.innerHTML = `<i class="fas fa-check"></i>`;
   newBtnEdit.textContent = `EDIT`;
   newBtnDel.innerHTML = `<i class="fas fa-times"></i>`;
-  //dodajemy guziki do diva
   newDiv.append(newBtnCom, newBtnEdit, newBtnDel);
-  // dodajemy całosć do nowego obiektu w liscie
   newTodo.appendChild(newDiv);
 };
 
 const checkClick = (e) => {
-  //if sprawdza czy klikniety guzik wybrana klase
+  //if sprawdza czy klikniety guzik ma wybrana klase
   if (e.target.matches(".complete")) {
-    // bardzo wazne! po kliknieciu odnosimy sie do najblizszego obiektu w tym przypadku LI.
+    //  po kliknieciu odnosimy sie do najblizszego obiektu w tym przypadku LI.
     //potem nadajemy odpowiedni efekt w css dzieki klasie completed - zadanie zakonczone.
     e.target.closest("li").classList.toggle("completed");
     e.target.classList.toggle("completed");
@@ -98,7 +90,6 @@ const checkClick = (e) => {
 };
 
 const editToDo = (e) => {
-  //najblizsze li ktore przechowuje text wpisany w zadaniu
   todoToEdit = e.target.closest("li");
   //ta linijka sprawia, ze w edycji widzimy juz wczesniej wpisane zadanie
   //inaczej edit były pusty. Dobre do poprawiania np. literówek.
