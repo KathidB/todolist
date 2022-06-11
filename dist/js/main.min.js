@@ -48,6 +48,9 @@ const addNewTodo = () => {
   if (todoInput.value !== "") {
     newTodo = document.createElement("li");
     newTodo.textContent = todoInput.value;
+    // na mobilach gdy wiadomosc była za długa uciekała poza LI, ten kod sprawia, ze text się załamuje do nowej linii.
+  
+
     ulList.appendChild(newTodo);
     todoInput.value = "";
     errorInfo.textContent = "";
