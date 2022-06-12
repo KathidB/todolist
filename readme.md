@@ -11,7 +11,7 @@ https://kathidb.github.io/todolist/
 
 Todo list allows you to add, delete and edit entries.
 <br>
-The field has a limitation on the maximum number of characters. The website is not fully responsive.
+The field has a limitation on the maximum number of characters.
 
 ## Info
 
