@@ -50,6 +50,7 @@ const addNewTodo = () => {
   }
 };
 
+// tworzymy guziki i dodajemy je do nowo utworzonego LI na liście
 const createToolsArea = () => {
   const newDiv = document.createElement("div");
   newDiv.classList.add("tools");
