@@ -60,9 +60,9 @@ const createToolsArea = () => {
   newBtnCom.classList.add("complete");
   newBtnEdit.classList.add("edit");
   newBtnDel.classList.add("delete");
-  newBtnCom.innerHTML = `<i class="fas fa-check"></i>`;
+  newBtnCom.innerHTML = `<i class="fa-solid fa-circle-check"></i>`;
   newBtnEdit.textContent = `EDIT`;
-  newBtnDel.innerHTML = `<i class="fas fa-times"></i>`;
+  newBtnDel.innerHTML = `<i class="fa-solid fa-trash-can"></i>`;
   newDiv.append(newBtnCom, newBtnEdit, newBtnDel);
   newTodo.appendChild(newDiv);
 };
@@ -81,7 +81,7 @@ const checkClick = (e) => {
   }
 };
 
-//funckjja sprawia, ze w edycji widzimy juz wczesniej wpisane zadanie
+//funkcja sprawia, ze w edycji widzimy juz wczesniej wpisane zadanie
 //inaczej edit były pusty.
 const editToDo = (e) => {
   todoToEdit = e.target.closest("li");
