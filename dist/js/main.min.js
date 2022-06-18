@@ -3,7 +3,6 @@ let errorInfo; // nie wpisałes zadania / musisz wpisac tekst
 let addBtn; //przycisk ADD - dodaje nowe elementy do listy
 let ulList; // tagi UL odpowiadające za listę zadań
 let newTodo; // nowo dodany Li na liscie
-
 let popup; // okno, które wyskakuje po kliknieciu przycisku edit
 let popupInfo; // tekst w opopupie / w przypadku dodania pustego textu
 let todoToEdit; // edutowany todo
@@ -67,11 +66,11 @@ const createToolsArea = () => {
   newTodo.appendChild(newDiv);
 };
 
+//if sprawdza czy klikniety guzik ma wybrana klase
+//  po kliknieciu odnosimy sie do najblizszego obiektu w tym przypadku LI.
+//potem nadajemy odpowiedni efekt w css dzieki klasie completed - zadanie zakonczone.
 const checkClick = (e) => {
-  //if sprawdza czy klikniety guzik ma wybrana klase
   if (e.target.matches(".complete")) {
-    //  po kliknieciu odnosimy sie do najblizszego obiektu w tym przypadku LI.
-    //potem nadajemy odpowiedni efekt w css dzieki klasie completed - zadanie zakonczone.
     e.target.closest("li").classList.toggle("completed");
     e.target.classList.toggle("completed");
   } else if (e.target.matches(".edit")) {
@@ -104,9 +103,9 @@ const changeToDoText = () => {
   }
 };
 
+//funcka bedzie usuwala element z lity za pomoca guzika
+// znajdujemy najblizszy element li dla guzika i potem uzywamy remove
 const deleteToDo = (e) => {
-  //funcka bedzie usuwala element z lity za pomoca guzika
-  // znajdujemy najblizszy element li dla guzika i potem uzywamy remove
   e.target.closest("li").remove();
   const allToDos = document.querySelectorAll("li");
 
