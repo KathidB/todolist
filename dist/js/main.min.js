@@ -57,8 +57,11 @@ const createToolsArea = () => {
   const newBtnEdit = document.createElement("button");
   const newBtnDel = document.createElement("button");
   newBtnCom.classList.add("complete");
+  newBtnCom.setAttribute("aria-label", "completed");
   newBtnEdit.classList.add("edit");
+  newBtnEdit.setAttribute("aria-label", "edit");
   newBtnDel.classList.add("delete");
+  newBtnDel.setAttribute("aria-label", "delete");
   newBtnCom.innerHTML = `<i class="fa-solid fa-circle-check"></i>`;
   newBtnEdit.textContent = `EDIT`;
   newBtnDel.innerHTML = `<i class="fa-solid fa-trash-can"></i>`;

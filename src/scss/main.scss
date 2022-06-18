@@ -37,7 +37,8 @@ h1 {
   padding-top: 20px;
 }
 
-.fas, .fa-solid  {
+.fas,
+.fa-solid {
   pointer-events: none;
 }
 
@@ -97,7 +98,7 @@ h1 {
   padding: 20px 0;
 }
 
-.todolist h3 {
+.todolist h2 {
   text-transform: uppercase;
   margin-bottom: 16px;
   color: white;
