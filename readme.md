@@ -1,6 +1,6 @@
 # TODO LIST
 
-Do napisania ToDo listy wykorzystałem HTML/CSS i vanilla JS.
+Do napisania ToDo listy wykorzystałem vanilla JS.
 <br> ToDo lista posiada podstawowe operacje umożliwiające tworzenie,usuwanie i edytowanie danych.
 <br> Pola tekstowe posiadają ograniczenie ilości znaków. Projekt jest częściowo responsywny. 
 
